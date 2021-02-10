@@ -28,8 +28,21 @@ public class BowlingGame {
 
             // add/change code below
 
-            frameRolls.add(-1);
-
+            if (rolls[rollIndex] + rolls[rollIndex+1] != 10){
+                frameRolls.add(rolls[rollIndex]);
+                frameRolls.add(rolls[rollIndex+1]);
+            }
+            if (rolls[rollIndex] + rolls[rollIndex+1] == 10 && rolls[rollIndex] < 10 && rolls[rollIndex+1] < 10){
+                frameRolls.add(rolls[rollIndex]);
+                frameRolls.add(rolls[rollIndex+1]);
+                frameRolls.add(rolls[rollIndex+2]);
+            }
+            if (rolls[rollIndex] == 10){
+                frameRolls.add(rolls[rollIndex]);
+                frameRolls.add(rolls[rollIndex+2]);
+                frameRolls.add(rolls[rollIndex+3]);
+            }
+            rollIndex += 2;
 
             // add/change code above
 
